@@ -75,3 +75,52 @@ if (1) {
 }else{
     console.log("Es falso");
 }
+
+if (null) {
+    console.log("Es truty");
+}else{
+    console.log("Es falso");//falsy
+}
+
+
+if (undefined) {
+    console.log("Es truty");
+}else{
+    console.log("Es falso");//falsy
+}
+
+
+//ORDEN DE IMPORTANCIA
+//1) const
+//2) let
+//3) x-> "var"
+
+
+//OBJETOS JS (JSON)- arreglos
+
+const kevin = {
+    nombre: "kevin", //sintaaxis -> llave: valor
+    "apellido": 'tipantiza',
+    edad: 23,
+    hijos:null,
+    zapatos: undefined,
+    casado: false,
+    ropa: {
+        color: 'rojo',
+        talla:'40'
+    },
+    mascotas: ['cachetes','pequitas','panda']
+
+
+}; //object
+
+//PARA ACCEDER A LOS ELEMENTOS DEL OBJETO
+kevin.nombre; //kevin
+kevin.apellido; //tipantiza
+
+
+
+const arregloNumeros = []; //object
+
+console.log(kevin);
+console.log(arregloNumeros);
