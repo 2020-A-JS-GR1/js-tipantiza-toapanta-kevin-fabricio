@@ -103,15 +103,24 @@ console.log('respuestaForEach', respuestaForEach) //undefined
 
 const respuestaMap = arreglo.map(
     function (valorActual, indiceActual, arregloCompleto) {
-       valorActual.nota= valorActual.nota+1;
-       return valorActual;
+      const nuevoElemento = {
+          id: valorActual.id,
+          nombre: valorActual.nombre,
+          nota:valorActual.nota+1
+
+      };
+
+       return nuevoElemento;
 
     }
 );
 
 console.log('respuestaMap', respuestaMap)
+console.log('arreglo', arreglo)
 
 const respuestaMapNuevo = arreglo.map(
+    //funcion anonima -> no tiene nombre
+    // funcion de flacha gorda
     function (valorActual, indiceActual, arregloCompleto) {
        return  valorActual.nota;
 
@@ -122,3 +131,16 @@ const respuestaMapNuevo = arreglo.map(
 console.log('respuestaMapNuevo', respuestaMapNuevo);
 console.log('arreglo', arreglo);
 
+//FILTER
+//DEVOLVER EXPRESION TRUTY FALSY
+const respuestaFilter = arreglo.filter(
+
+    (valorActual, indiceActual, arregloCompleto) =>{
+        return  valorActual.nota >=14;
+
+
+    }
+);
+
+console.log('respuestaFilter', respuestaFilter);
+console.log('arreglo', arreglo);
