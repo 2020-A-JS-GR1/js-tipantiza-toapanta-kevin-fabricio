@@ -57,7 +57,7 @@ const vocales = ['a', 'e', 'i', 'o', 'u'];
 const respuestaMap = arreglo.map(valorActual => {
 
         //contador
-        let nuevaNota = 0;
+        var nuevaNota = 0;
 
         //recorrer los nombres para encontrar vocal
         // indexOf si no es -1  -- es vocal sino es consontante y se modifica la nota
