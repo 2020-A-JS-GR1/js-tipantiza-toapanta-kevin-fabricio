@@ -144,3 +144,42 @@ const respuestaFilter = arreglo.filter(
 
 console.log('respuestaFilter', respuestaFilter);
 console.log('arreglo', arreglo);
+
+//some -> expresion
+//devuelve BOOLEANO
+//HAY ALGUNA NOTA MENORES A NUEVE ? SI NO
+
+//OR
+const respuestaSome = arreglo.some(
+    (valorActual, indiceActual, arregloCompleto) =>{
+        return valorActual.nota < 9;
+    }
+);
+
+console.log('respuestaSome', respuestaSome);
+
+//EVERY -> expresion
+//devuelve BOOLEANO
+//TODAS LAS NOTAS SON MAYORES A 14? SI NO
+
+
+//AND
+
+
+const respuestaEvery = arreglo.every(
+    (valorActual, indiceActual, arregloCompleto) =>{
+        return valorActual.nota > 14;
+    }
+);
+
+console.log('respuestaEvery', respuestaAny);
+
+
+
+
+
+
+
+
+
+
