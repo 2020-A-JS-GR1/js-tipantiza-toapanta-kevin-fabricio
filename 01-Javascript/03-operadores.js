@@ -172,14 +172,46 @@ const respuestaEvery = arreglo.every(
     }
 );
 
-console.log('respuestaEvery', respuestaAny);
+console.log('respuestaEvery', respuestaEvery);
 
 
 
+//REDUCE
+//reduce izq -> der
+//reduceRight der -> izq
+
+const respuestaReduce = arreglo.reduce(
+    ( valorAcumulado, valorActual, indice, arreglo) => {
+        return valorAcumulado + valorActual.nota;
+    },
+    0 //acumulador
+)
+
+console.log('respuestaReduce', respuestaReduce);
 
 
 
+//EJEMPLO
 
 
+const arregloEstudiantesMenoresANueve = arreglo.map(
+    (valorActual) =>{
+        return valorActual.nota * 1.3 //añadiendo el 30%
+    }
+).filter(
+    (nota )=>{
+       return  nota < 9 //Busco a los <9
+    }
+)
 
 
+const totalPuntosEstudiantes = arregloEstudiantesMenoresANueve. reduce(
+    (acumulador, actual)=>{
+       return acumulador + actual  //total
+    },
+    0
+)
+
+const notaPromedio = totalPuntosEstudiantes / arregloEstudiantesMenoresANueve.length;
+
+console.log('notaPromedio', notaPromedio);
