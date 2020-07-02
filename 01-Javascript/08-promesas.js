@@ -43,7 +43,7 @@ promesaEsPar(2)
     (numeroPar)=>{
         console.log('contenido then', numeroPar);
 
-
+    //devolver promesa para concatenar
         return promesaElevarAlCuadrado(numeroPar)//promesa
     }
     ).then(
