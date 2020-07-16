@@ -1,0 +1,4 @@
+{"codigo":"123","nombre":"kevin","repite":"false","edad":"23","nacionalidad":"Ecuatoriana"}
+{"codigo":"100","nombre":"felipe","repite":"false","edad":"23","nacionalidad":"Ecuatoriana"}
+{"codigo":"140","nombre":"roberto","repite":"true","edad":"25","nacionalidad":"Colombiana"}
+{"codigo":"15","nombre":"victor","repite":"true","edad":"21","nacionalidad":"Ecuatoriana"}
