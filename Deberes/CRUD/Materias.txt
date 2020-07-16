@@ -1,0 +1,4 @@
+{"codigo":"sis12","nombre":"calidad","horario":"11-13","precio":"30.00","periodo":"2020A"}
+{"codigo":"sis300","nombre":"probabilidad","horario":"11-13","precio":"10.00","periodo":"2020A"}
+{"codigo":"sis40","nombre":"fisica","horario":"7-9","precio":"40.00","periodo":"2020A"}
+{"codigo":"sis444","nombre":"progra","horario":"9-11","precio":"50.00","periodo":"2010A"}
