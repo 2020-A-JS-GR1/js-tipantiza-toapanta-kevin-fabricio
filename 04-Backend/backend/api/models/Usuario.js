@@ -32,6 +32,14 @@ module.exports = {
       type: 'string',
       isIn: ['Soltero', 'Casado', 'Divorciado', 'Viudo', 'Unión libre'], // Solo estos valores
       defaultsTo: 'Soltero' // Valor por defecto
+    },
+
+    //RELACIONES
+
+    // Usuario -> Pokemon
+    pokemones:{ //uno a muchos (nombre en plural)
+      collection:'Pokemon', //Modelo a relacionerse
+      via:'usuario' //nombre del atributo FK en el modelo relacionada
     }
 
   },
