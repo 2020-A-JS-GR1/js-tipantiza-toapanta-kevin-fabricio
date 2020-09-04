@@ -1,10 +1,42 @@
 
 <h1>Lista de peliculas</h1>
-<app-carta-pelicula></app-carta-pelicula>
+
+<!--Directiva - NGFOR-->
+
+<p *ngFor="let numero of arregloNumeros">{{numero}}</p>
+
+<!--Directiva - NGIF-->
+
+<p *ngIf="false" >Oculto</p>
+
+<div *ngFor="let pelicula of arregloPeliculas">
 
 
 
+    <app-carta-pelicula
+            [urlImagen]="pelicula.url"
+            [descripcion] = "pelicula.descripcion"
+            [nombreBoton] ="pelicula.nombrePelicula"
+            (eventoDioClicEnBoton)="mensajeConsola($event)"
+            (eventoDioClicEnImagen)="mensajeConsola($event)"
+    >
 
+    </app-carta-pelicula>
+
+</div>
+
+<!--
+<br>
+<app-carta-pelicula
+        urlImagen="https://i.ytimg.com/vi/WPQq7fw_XMk/maxresdefault.jpg"
+        descripcion = "Descripcion 2"
+        nombreBoton ="Like 2"
+
+>
+
+</app-carta-pelicula>
+
+-->
 
 
 

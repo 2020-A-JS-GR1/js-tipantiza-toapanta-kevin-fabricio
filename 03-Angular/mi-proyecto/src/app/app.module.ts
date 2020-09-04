@@ -4,17 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CartaPeliculaComponent } from './componentes/carta-pelicula/carta-pelicula.component';
+import {UsuarioService} from "./servicios/http/usuario.service";
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
-  declarations: [
+  declarations: [ //Componentes
     AppComponent,
     CartaPeliculaComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+  imports: [ //Modulo que vamos a usar
+    BrowserModule, //-> Importar el NGFOR y el NGIF
+    AppRoutingModule,
+    HttpClientModule, // -> Importa el HttpClient
   ],
-  providers: [],
+  providers: [ //Servicios
+      UsuarioService
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
