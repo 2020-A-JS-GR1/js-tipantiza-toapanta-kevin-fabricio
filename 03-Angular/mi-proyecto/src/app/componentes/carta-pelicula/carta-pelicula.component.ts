@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-carta-pelicula',
@@ -16,6 +16,14 @@ export class CartaPeliculaComponent implements OnInit {
   @Input()
   nombreBoton:string;
 
+
+  @Output()
+  eventoDioClicEnBoton: EventEmitter<any> = new EventEmitter<boolean>()
+
+  @Output()
+  eventoDioClicEnImagen: EventEmitter<any> = new EventEmitter<boolean>()
+
+
   urlEjemploImagen = 'https://www.espectroemocional.site/wp-content/uploads/2020/04/poster-spiderman-1.jpg';
   textoEjemplo = 'Kevin';
 
@@ -32,6 +40,15 @@ export class CartaPeliculaComponent implements OnInit {
   }
   eventoOnBlur(){
     console.log('Blur')
+  }
+
+  ejecutarEventoDioClic(){
+    this.eventoDioClicEnBoton.emit(true);
+
+  }
+  ejecutarEventoDioClicImagen(){
+    this.eventoDioClicEnImagen.emit(true);
+
   }
 
 }
