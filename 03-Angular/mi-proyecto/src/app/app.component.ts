@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UsuarioService} from "./servicios/http/usuario.service";
 import {observable} from "rxjs";
 
@@ -7,11 +7,19 @@ import {observable} from "rxjs";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
 
   title = 'mi-proyecto';
+
+  habilitado = true;
+
   arregloNumeros =[1,2,3];
+
+  arregloUsuarios=[];
+
+  arregloObservables = [];
+
   arregloPeliculas = [
     {
       id:1,
@@ -27,7 +35,7 @@ export class AppComponent {
     },
     {
       id:3,
-      url:'https://pics.filmaffinity.com/Joker-790658206-mmed.jpg',
+      url:'https://i.pinimg.com/736x/31/b0/4d/31b04d625dbfafee3dad8c85e6eb8451.jpg',
       descripcion:'pelicula de antiheroe',
       nombrePelicula: 'the Kocker'
     },
@@ -38,20 +46,52 @@ export class AppComponent {
 
   }
 
+  ngOnInit(){
+
+    this.mensajeConsola(true);
+
+  }
+
   mensajeConsola(objeto: boolean){
 
     console.log('llego el evento', objeto);
 
       const observableTraerTodos = this._usuarioService.traerTodos();
-      observableTraerTodos
+      this.arregloObservables.push(observableTraerTodos);
+      const subscripcion = observableTraerTodos
           .subscribe(
               (data)=>{ // THEN TRY
+
+                this.arregloUsuarios = data as any[];
                 console.log(data);
               },
               (error)=>{ // CATCH
                 console.log(error);
               }
           );
+      this.arregloObservables.push(subscripcion);
+     // subscripcion.unsubscribe();
+
+  }
+
+  crearUsuario(){
+    const usuarioNuevo = {
+      cedula: "1718935999",
+      nombre:"isacc",
+      apellido:"newton"
+    };
+    const obsCrearUsuario = this._usuarioService.crear(usuarioNuevo);
+    obsCrearUsuario
+        .subscribe(
+            (data)=>{ // THEN TRY
+              console.log('Nuevo Usuario', data);
+              this.mensajeConsola(true)
+            },
+            (error)=>{ // CATCH
+              console.log(error);
+            }
+        );
+
 
   }
 
