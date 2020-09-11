@@ -9,6 +9,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { RutaInicioComponent } from './Rutas/ruta-inicio/ruta-inicio.component';
 import { RutaLoginComponent } from './Rutas/ruta-login/ruta-login.component';
 import { RutaDetalleUsuarioComponent } from './Rutas/ruta-detalle-usuario/ruta-detalle-usuario.component';
+import { RutaUsuarioComponent } from './Rutas/ruta-usuario/ruta-usuario.component';
+import { RutaListaUsuarioComponent } from './Rutas/ruta-lista-usuario/ruta-lista-usuario.component';
+import { RutaCrearUsuarioComponent } from './Rutas/ruta-crear-usuario/ruta-crear-usuario.component';
+import { RutaEditarUsuarioComponent } from './Rutas/ruta-editar-usuario/ruta-editar-usuario.component';
 
 @NgModule({
   declarations: [ //Componentes
@@ -16,7 +20,11 @@ import { RutaDetalleUsuarioComponent } from './Rutas/ruta-detalle-usuario/ruta-d
     CartaPeliculaComponent,
     RutaInicioComponent,
     RutaLoginComponent,
-    RutaDetalleUsuarioComponent
+    RutaDetalleUsuarioComponent,
+    RutaUsuarioComponent,
+    RutaListaUsuarioComponent,
+    RutaCrearUsuarioComponent,
+    RutaEditarUsuarioComponent
   ],
   imports: [ //Modulo que vamos a usar
     BrowserModule, //-> Importar el NGFOR y el NGIF

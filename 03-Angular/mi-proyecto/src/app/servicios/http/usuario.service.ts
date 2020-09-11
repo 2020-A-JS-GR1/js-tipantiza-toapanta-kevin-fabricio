@@ -23,6 +23,16 @@ export class UsuarioService {
         )
 }
 
+    obtenerUnoPorId(idUsuario:number){
+        return this._httpClient.get(this.url + '/usuario/'+ idUsuario)
+    }
+
+    eliminar(idUsuario:number){
+
+        return this._httpClient.delete(this.url + '/usuario/'+ idUsuario)
+
+    }
+
 
 
 }
