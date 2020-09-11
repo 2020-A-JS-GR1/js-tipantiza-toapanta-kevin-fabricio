@@ -11,16 +11,21 @@
 
 <button (click)="crearUsuario()">Crear usuario</button>
 -->
+
+<!--
 <div *ngFor="let usuario of arregloUsuarios">
     {{usuario.nombre}}
 </div>
-
+-->
 <ul>
     <li>
         <a [routerLink]="['inicio']" > Ir inicio</a>
     </li>
     <li>
         <a [routerLink]="['login']">Ir login</a>
+    </li>
+    <li>
+        <a [routerLink]="['usuario']">Usuarios</a>
     </li>
 </ul>
 
