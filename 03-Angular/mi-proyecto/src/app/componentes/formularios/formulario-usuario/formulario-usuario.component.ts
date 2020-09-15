@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-formulario-usuario',
@@ -7,31 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioUsuarioComponent implements OnInit {
 
-  nombreModelo:string;
-  cedulaModelo:string;
-  estadoCivilModelo:string;
+  nombreModelo: string;
+  cedulaModelo: string;
+  estadoCivilModelo: string
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  crearUsuario(formulario){
-
-    //console.log(formulario);
-
+  crearUsuario(formulario) {
     const cedula = this.cedulaModelo;
     const esNumero = !Number.isNaN(Number(cedula));
     if(esNumero){
-      //LLAMAR AL SERVICIO HTTP Y ENVIAR UN POST AL SERVIDOR CON LOS DATOS DEL FORMULARIO
-      console.log('LISTO:)');
-    }else{
-      console.error('No es un Numero')
+      // LLAMAR AL SERVICIO HTTTP Y ENVIAR UN POST AL SERVIDOR CON LOS DATOS DEL FORMULARIO
+      console.log('LISTO :) ')
+    } else {
+      console.error('NO ES UN NUMERO')
     }
-
   }
-  ayuda(){
-    alert('ayuda')
+
+  ayuda() {
+    alert('Ayuda')
   }
 
 }
