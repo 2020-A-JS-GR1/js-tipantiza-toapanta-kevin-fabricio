@@ -15,6 +15,10 @@ import { RutaCrearUsuarioComponent } from './Rutas/ruta-crear-usuario/ruta-crear
 import { RutaEditarUsuarioComponent } from './Rutas/ruta-editar-usuario/ruta-editar-usuario.component';
 import { FormularioUsuarioComponent } from './componentes/formularios/formulario-usuario/formulario-usuario.component';
 import {FormsModule} from "@angular/forms";
+import {AuthService} from "./servicios/auth/auth.service";
+import {EstaLogeadoGuards} from "./servicios/guards/esta-logeado.guards";
+import {EsAdministradorGuards} from "./servicios/guards/es-administrador.guards";
+import {EsSupervisorGuards} from "./servicios/guards/es-supervisor.guards";
 
 @NgModule({
   declarations: [ //Componentes
@@ -36,7 +40,11 @@ import {FormsModule} from "@angular/forms";
     FormsModule  //Permite la funcionalidad de los formularios Template
   ],
   providers: [ //Servicios
-      UsuarioService
+      UsuarioService,
+      AuthService,
+      EstaLogeadoGuards,
+      EsAdministradorGuards,
+      EsSupervisorGuards
 
   ],
   bootstrap: [AppComponent]
