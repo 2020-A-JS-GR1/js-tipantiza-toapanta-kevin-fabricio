@@ -6,6 +6,9 @@ import {RutaUsuarioComponent} from "./Rutas/ruta-usuario/ruta-usuario.component"
 import {RutaListaUsuarioComponent} from "./Rutas/ruta-lista-usuario/ruta-lista-usuario.component";
 import {RutaCrearUsuarioComponent} from "./Rutas/ruta-crear-usuario/ruta-crear-usuario.component";
 import {RutaEditarUsuarioComponent} from "./Rutas/ruta-editar-usuario/ruta-editar-usuario.component";
+import {EstaLogeadoGuards} from "./servicios/guards/esta-logeado.guards";
+import {EsAdministradorGuards} from "./servicios/guards/es-administrador.guards";
+import {EsSupervisorGuards} from "./servicios/guards/es-supervisor.guards";
 
 
 const routes: Routes = [
@@ -20,6 +23,9 @@ const routes: Routes = [
   {
     component:RutaUsuarioComponent,
     path:'usuario',
+    canActivate:[
+        EstaLogeadoGuards
+    ],
     children:[
       {
         path:'lista',
@@ -27,11 +33,17 @@ const routes: Routes = [
       },
       {
         path:'crear',
-        component:RutaCrearUsuarioComponent
+        component:RutaCrearUsuarioComponent,
+        canActivate:[
+            EsSupervisorGuards
+        ]
       },
       {
         path:'editar/:id',
-        component: RutaEditarUsuarioComponent
+        component: RutaEditarUsuarioComponent,
+        canActivate:[
+            EsAdministradorGuards
+        ]
       },
       {
         path:'',

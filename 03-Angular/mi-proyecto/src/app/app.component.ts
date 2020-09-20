@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UsuarioService} from "./servicios/http/usuario.service";
 import {observable} from "rxjs";
+import {AuthService} from "./servicios/auth/auth.service";
 
 @Component({
   selector: 'aplicacion-nueva',
@@ -42,7 +43,10 @@ export class AppComponent implements OnInit {
   ]
 
   // Inyectar Dependencias
-  constructor(private readonly  _usuarioService: UsuarioService) {
+  constructor(
+      private readonly  _usuarioService: UsuarioService,
+      public readonly _authService:AuthService
+  ) {
 
   }
 

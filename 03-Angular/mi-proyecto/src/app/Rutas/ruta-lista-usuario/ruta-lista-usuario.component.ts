@@ -11,20 +11,51 @@ import {Router} from "@angular/router";
 })
 export class RutaListaUsuarioComponent implements OnInit {
   arregloUsuarios = [];
+  busquedaModelo = '';
+
   constructor(  private readonly _usuarioService: UsuarioService, private readonly _router: Router) { }
 
   ngOnInit(): void {
-    const observableTraerTodos = this._usuarioService.traerTodos();
-    observableTraerTodos
-        .subscribe(
-            (usuarios:any[]) =>{
-              this.arregloUsuarios = usuarios;
-            },
-            (error) =>{
-              console.error('Error',error)
-            }
-        )
+      this.filtrarArreglo()
+
   }
+
+    filtrarArreglo(){
+
+      const consulta = {
+          or: [
+
+              {
+                  nombre:{
+                      contains : this.busquedaModelo
+
+                  }
+              },
+              {
+                  cedula:{
+                      contains : this.busquedaModelo
+
+                  }
+              },
+
+          ]
+      }
+
+      const consultaString = 'where=' + JSON.stringify(consulta)
+
+        const observableTraerTodos = this._usuarioService
+            .traerTodos( this.busquedaModelo != '' ? consultaString:'');
+        observableTraerTodos
+            .subscribe(
+                (usuarios:any[]) =>{
+                    this.arregloUsuarios = usuarios;
+                },
+                (error) =>{
+                    console.error('Error',error)
+                }
+            )
+
+    }
 
 
   irAEditarUsuario(id:number){
@@ -52,6 +83,10 @@ export class RutaListaUsuarioComponent implements OnInit {
       )
 
   }
+
+
+
+
 }
 
 
